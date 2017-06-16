@@ -13,11 +13,16 @@
     "phpunit/phpunit": "^5.6.1"
   },
   "require": {
-    "php": "^5.6 || ^7.0"
+    "php": "^5.6 || ^7.0",
+    "zendframework/zend-config": "^3.1"
   },
   "autoload": {
     "psr-4": {
-      "E4u\\Common\\": "src/",
+      "E4u\\Common\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
       "E4uTest\\Common\\": "tests/src/"
     }
   }
