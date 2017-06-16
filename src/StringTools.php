@@ -182,15 +182,14 @@ class StringTools
         $firstname = trim(strtolower(strtok($name, ' ')));
 
         $vocative = $firstname;
-        if ($branch = @$vocativeRules[substr($firstname, -1)])
-        {
-            while ($suffix = current($branch))
-            {
-                if (preg_match('/(.*)'.key($branch).'$/i', $firstname, $reg))
-                {
+        if ($branch = @$vocativeRules[substr($firstname, -1)]) {
+            while ($suffix = current($branch)) {
+
+                if (preg_match('/(.*)'.key($branch).'$/i', $firstname, $reg)) {
                     $vocative = $reg[1].$suffix;
                     break;
                 }
+
                 next($branch);
             }
         }
@@ -198,6 +197,10 @@ class StringTools
         return self::ucFirst($vocative);
     }
 
+    /**
+     * @param  string $txt
+     * @return string
+     */
     public static function ucFirst($txt)
     {
         return mb_strtoupper(mb_substr($txt, 0, 1)) . mb_substr($txt, 1);
