@@ -1,0 +1,7 @@
+<phpunit bootstrap="./bootstrap.php">
+    <testsuites>
+        <testsuite name="E4u Common">
+            <directory>src/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
