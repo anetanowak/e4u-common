@@ -59,7 +59,7 @@ class Template
         if (!is_null($vars) && !is_array($vars) && !$vars instanceof \ArrayAccess) {
             throw new Exception\LogicException(sprintf(
                 '$vars can be null, array or ArrayAccess, %s given.',
-                \E4u\Common\Variable::getType($vars)));
+                Variable::getType($vars)));
         }
         
         return preg_replace_callback('/\[\[((?<name>.*)(\((?<options>.*)\))?)\]\]/U', function ($matches) use ($vars) {
